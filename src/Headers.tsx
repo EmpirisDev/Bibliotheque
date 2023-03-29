@@ -1,8 +1,8 @@
 export const Headers = () => {
     return (
-        <div>
-            <h1>Header</h1>
-        </div>
+        <h1 className="text-8xl pb-32 font-bold underline text-center">
+            Hello world!
+        </h1>
     )
 
 }

@@ -1,12 +1,10 @@
 import {Headers} from "./Headers";
 
-
-const App = () => {
+export default function App() {
     return (
-        <div>
-            <Headers />
+
+        <div className="">
+            <Headers/>
         </div>
     )
 }
-
-export default App
