@@ -17,9 +17,11 @@ export const Headers = () => {
                         </div>
                     </div>
                     <div className="md:hidden">
-                        <button type="button" className="text-gray-500 hover:text-white focus:outline-none focus:text-white">
+                        <button type="button"
+                                className="text-gray-500 hover:text-white focus:outline-none focus:text-white">
                             <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"></path>
                             </svg>
                         </button>
                     </div>
