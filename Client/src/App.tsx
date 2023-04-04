@@ -1,24 +1,33 @@
 import axios from "axios";
 import React from "react";
+import {Headers}from "./component/Headers";
+import {ListeLivre} from "./component/ListeLivre";
+
 
 const baseURL = "http://localhost:80/api";
 
+
+
 export default function App() {
-    const [post, setPost] = React.useState(null);
+    // const [livres, setLivres] = React.useState<Livre[]>([]);
 
-    React.useEffect(() => {
-        axios.get(baseURL).then((response) => {
-            console.log(response)
-            setPost(response.data);
-        });
-    }, []);
+    // React.useEffect(() => {
+    //         axios
+    //             .get<Livre[]>(`${baseURL}/livres`)
+    //             .then((response) => {
+    //                 console.log(response.data);
+    //                 setLivres(response.data);
+    //             })
+    //             .catch((error) => {
+    //                 console.error(error);
+    //             });
+    //     }, []);
 
-    if (!post) return null;
 
     return (
-        <div>
-            <h1>Ma DATA :</h1>
-            <h1>{post.message}</h1>
+        <div className={""} >
+            <Headers/>
+            <ListeLivre/>
 
         </div>
     );

@@ -21,6 +21,7 @@ async function connect() {
         await client.connect(); // Connexion au client MongoDB
         console.log('Connecté à la base de données');
     } catch (error) {
+        console.log("tes pas co")
         console.error(error);
     }
 }
@@ -41,9 +42,7 @@ app.get('/api/livres', async (req, res) => {
         res.json(data); // Renvoi des livres sous forme de JSON
     } catch (error) {
         console.error(error);
-        res.status(500).send('Erreur serveur');
-    } finally {
-        await client.close(); // Fermeture de la connexion avec le client MongoDB
+        res.status(500).send('Va check app.get API/livres');
     }
 });
 
