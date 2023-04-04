@@ -18,7 +18,7 @@ export default function App() {
     return (
         <div>
             <h1>Ma DATA :</h1>
-            <h1>{post.msg}</h1>
+            <h1>{post.message}</h1>
 
         </div>
     );
