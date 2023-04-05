@@ -16,7 +16,9 @@ const uri = 'mongodb+srv://admin:Antoine358@bibliotheque.cjuyuyw.mongodb.net/?re
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Fonction pour se connecter à la base de données MongoDB
-async function connect() {
+async function connect(){
+
+
     try {
         await client.connect(); // Connexion au client MongoDB
         console.log('Connecté à la base de données');
@@ -38,7 +40,7 @@ app.get('/api', (req, res) => {
 app.get('/api/livres', async (req, res) => {
     try {
         const collection = client.db('bibliotheque').collection('livre'); // Récupération de la collection 'livre' dans la base de données
-        const data = await collection.find({}).toArray(); // Récupération de tous les livres dans la collection et stockage dans un tableau
+        const data = await collection.find({}).next(); // Récupération de tous les livres dans la collection et stockage dans un tableau
         res.json(data); // Renvoi des livres sous forme de JSON
     } catch (error) {
         console.error(error);

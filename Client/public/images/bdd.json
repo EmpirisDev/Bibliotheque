@@ -1,0 +1,40 @@
+{
+  "_id": {
+    "$oid": "642c381b6f2a9fa2ffd9f4f4"
+  },
+  "livre": [
+    {
+      "titre": "Le seigneur des anneaux",
+      "numero": "1",
+      "auteur": "J.R.R. Tolkien",
+      "serie": "Le seigneur des anneaux",
+      "anneePublication": "1954",
+      "description": "Un jeune hobbit doit partir en quête pour détruire un anneau magique",
+      "genre": "Fantasy",
+      "nombrePages": "576",
+      "image": "../../public/images/Livres/le_seigneur_des_anneaux.jpg"
+    },
+    {
+      "titre": "Harry Potter et l'école des sorciers",
+      "numero": "1",
+      "auteur": "J.K. Rowling",
+      "serie": "Harry Potter",
+      "anneePublication": "1997",
+      "description": "Un jeune sorcier découvre un monde magique et dangereux",
+      "genre": "Fantasy",
+      "nombrePages": "256",
+      "image": "../../public/images/Livres/harry_potter_et_l_ecole_des_sorciers.jpg"
+    },
+    {
+      "titre": "1984",
+      "numero": null,
+      "auteur": "George Orwell",
+      "serie": null,
+      "anneePublication": "1949",
+      "description": "Dans un monde totalitaire, un homme essaie de trouver l'amour et la liberté",
+      "genre": "Science-fiction",
+      "nombrePages": "336",
+      "image": "../../public/images/Livres/1984.jpg"
+    }
+  ]
+}

@@ -6,3 +6,8 @@
 .img{
     @apply mr-8 text-gray-300 hover:text-white mr-4
 }
+.section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px -2px #11a1c4;
+    animation-delay: inherit;
+}
