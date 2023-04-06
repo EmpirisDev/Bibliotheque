@@ -1,6 +1,5 @@
-import {useEffect, useState} from "react";
-import {Headers} from "./Headers";
-import {Footer} from "./Footer";
+import React, {useEffect, useState} from "react";
+
 
 type Livre = {
     _id: string;
@@ -12,7 +11,7 @@ type Livre = {
     image: string;
 };
 
-export function Livres() {
+export function ListeLivres() {
     const [records, setRecords] = useState<Livre[]>([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedLivre, setSelectedLivre] = useState<Livre | null>(null);

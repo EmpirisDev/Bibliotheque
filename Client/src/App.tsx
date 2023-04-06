@@ -1,6 +1,6 @@
 import React from "react";
 import {Headers} from "./component/Headers";
-import {Livres} from "./component/Livres";
+import {ListeLivres} from "./component/Livres";
 import {Footer} from "./component/Footer";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Serie} from "./component/Serie";
@@ -20,14 +20,14 @@ export default function App() {
             <BrowserRouter>
                 <Routes>
                     <Route element={<Layout/>}>
-                        <Route path="/livres" element={<Livres/>}/>
+                        <Route path="/livres" element={<ListeLivres/>}/>
                         <Route path={"/series"} element={<Serie/>}/>
                         <Route path={"/bibliotheque"} element={<Bibliotheque/>}/>
                         <Route path={"/Profil"} element={<Profils/>}/>
 
 
                         {/*Redirige tout les mauvais lien vers la page de la liste des livres*/}
-                        <Route path={"*"} element={<Livres/>}/>
+                        <Route path={"*"} element={<ListeLivres/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>
