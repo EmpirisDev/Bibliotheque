@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import {Headers} from "./Headers";
+import {Footer} from "./Footer";
 
 type Livre = {
     _id: string;
@@ -10,7 +12,7 @@ type Livre = {
     image: string;
 };
 
-export function ListeLivre() {
+export function Livres() {
     const [records, setRecords] = useState<Livre[]>([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedLivre, setSelectedLivre] = useState<Livre | null>(null);
@@ -39,13 +41,14 @@ export function ListeLivre() {
                 <div className="flex items-center justify-center">
                     <img
                         src={livre.image}
+
                         alt={`Couverture de ${livre.titre}`}
                         className="h-64 max-w-full max-h-full object-contain"
                     />
                 </div>
                 <div className="mt-2 ">
-                    <div className={"bg-gray-300 p-2 rounded"}>
-                        <p className={"font-bold"}>Description:</p>
+                    <div className={"bg-gray-300 p-2 mb-0.5 text-center rounded"}>
+                        <p className={"font-bold"}>Description </p>
                         <p className="text-gray-700">{livre.description}</p>
                     </div>
                     <div className={"flex-auto flex justify-center"}>
@@ -53,7 +56,7 @@ export function ListeLivre() {
                             className="mt-3 bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             onClick={() => handleLivreClick(livre)}
                         >
-                            Voir détails
+                            Voir les détails
                         </button>
                     </div>
                 </div>
@@ -61,8 +64,10 @@ export function ListeLivre() {
         );
     });
     return (
-        <div className="container bg-gray-100 mx-auto px-4">
-            <h1 className="text-center text-4xl font-bold mb-4">Liste des livres</h1>
+
+        <div className="container bg-gray-100 mx-auto">
+
+            <h1 className="text-center text-4xl font-extralight mb-4">Liste des livres</h1>
             <div className="flex flex-wrap justify-center">
                 {listLivre}
             </div>
@@ -100,13 +105,16 @@ export function ListeLivre() {
                                 </button>
                                 <button onClick={() => setSelectedLivre(null)} type="button"
                                         className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:ml-3 sm:w-auto sm:text-sm">
-                                    Rajouter à la bibliothèque
+                                    Ajouter à la bibliothèque
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
             )}
+
         </div>
+
     );
 }
