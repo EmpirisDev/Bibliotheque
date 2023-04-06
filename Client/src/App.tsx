@@ -3,7 +3,7 @@ import React from "react";
 import {ListeLivres} from "./component/Livres";
 
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Serie} from "./component/Serie";
+import {ListeSeries} from "./component/Serie";
 import {Bibliotheque} from "./component/Bibliotheque";
 import {Profils} from "./component/Profils";
 import {Layout} from "./component/Layout";
@@ -21,7 +21,7 @@ export default function App() {
                 <Routes>
                     <Route element={<Layout/>}>
                         <Route path="/livres" element={<ListeLivres/>}/>
-                        <Route path={"/series"} element={<Serie/>}/>
+                        <Route path={"/series"} element={<ListeSeries/>}/>
                         <Route path={"/bibliotheque"} element={<Bibliotheque/>}/>
                         <Route path={"/Profil"} element={<Profils/>}/>
 
