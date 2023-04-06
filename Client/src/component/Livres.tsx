@@ -19,9 +19,11 @@ export function ListeLivres() {
     useEffect(() => {
         fetch("http://localhost:80/api/livres")
             .then((response) => response.json())
-            .then((data) => setRecords(data.livre))
+            .then((data) => setRecords(data))
             .catch((error) => console.error(error));
     }, []);
+
+    console.log(records);
     const handleLivreClick = (livre: Livre) => {
         setSelectedLivre(livre);
     };
@@ -66,7 +68,7 @@ export function ListeLivres() {
 
         <div className="container bg-gray-100 mx-auto">
 
-            <h1 className="text-center text-4xl font-extralight mb-4">Liste des livres</h1>
+            <h1 className="text-center text-4xl font-extralight mb-3">Liste des livres</h1>
             <div className="flex flex-wrap justify-center">
                 {listLivre}
             </div>

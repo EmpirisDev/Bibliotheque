@@ -33,19 +33,30 @@ connect();
 
 // Définition de la route API pour renvoyer un message JSON
 app.get('/api', (req, res) => {
-    res.json({ message: 'Hello World!' });
+    res.json({ message: 'Il manque la suite de ta route après /api/..' });
 });
 
 // Définition de la route API pour récupérer les livres dans la base de données MongoDB
 app.get('/api/livres', async (req, res) => {
     try {
         const collection = client.db('bibliotheque').collection('livre'); // Récupération de la collection 'livre' dans la base de données
-        const data = await collection.find({}).next(); // Récupération de tous les livres dans la collection et stockage dans un tableau
+        const data = await collection.find({}).toArray(); // Récupération de tous les livres dans la collection et stockage dans un tableau
         res.json(data); // Renvoi des livres sous forme de JSON
     } catch (error) {
         console.error(error);
         res.status(500).send('Va check app.get API/livres');
     }
+});
+app.get('/api/series', async (req, res) => {
+    try {
+        const collection = client.db('bibliotheque').collection('serie'); // Récupération de la collection 'livre' dans la base de données
+        const data = await collection.find({}).toArray(); // Récupération de tous les livres dans la collection et stockage dans un tableau
+        res.json(data); // Renvoi des livres sous forme de JSON
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Va check app.get API/livres');
+    }
+
 });
 
 // Lancement du serveur sur le port 80
