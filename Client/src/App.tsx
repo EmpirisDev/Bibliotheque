@@ -1,7 +1,7 @@
 import React from "react";
-import {Headers} from "./component/Headers";
+
 import {ListeLivres} from "./component/Livres";
-import {Footer} from "./component/Footer";
+
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {ListeSeries} from "./component/Serie";
 import {Bibliotheque} from "./component/Bibliotheque";
