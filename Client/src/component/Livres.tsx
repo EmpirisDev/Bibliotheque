@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 type Livre = {
     _id: string;
@@ -23,7 +23,6 @@ export function ListeLivres() {
             .catch((error) => console.error(error));
     }, []);
 
-    console.log(records);
     const handleLivreClick = (livre: Livre) => {
         setSelectedLivre(livre);
     };
@@ -32,6 +31,17 @@ export function ListeLivres() {
         setSelectedLivre(null);
     };
 
+    const handleAddToLibrary = (livre: Livre) => {
+        axios
+            .post("http://localhost:80/api/ajoutLivreBiblio", livre, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
     const listLivre = records.map((livre: Livre) => {
         return (
             <div
@@ -106,10 +116,14 @@ export function ListeLivres() {
                                         className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:ml-3 sm:w-auto sm:text-sm">
                                     Fermer
                                 </button>
-                                <button onClick={() => setSelectedLivre(null)} type="button"
-                                        className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                <button
+                                    className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:ml-3 sm:w-auto sm:text-sm"
+                                    onClick={() => handleAddToLibrary(selectedLivre)}
+                                >
                                     Ajouter à la bibliothèque
                                 </button>
+
+
                             </div>
                         </div>
                     </div>
