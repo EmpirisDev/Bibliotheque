@@ -35,6 +35,7 @@ export function ListeLivres() {
     const listLivre = records.map((livre: Livre) => {
         return (
             <div
+
                 key={livre._id}
                 className="m-2 section bg-gray-100 border border-gray-300 p-4 rounded-lg mb-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4"
             >
@@ -46,6 +47,7 @@ export function ListeLivres() {
                         alt={`Couverture de ${livre.titre}`}
                         className="h-64 max-w-full max-h-full object-contain"
                     />
+
                 </div>
                 <div className="mt-2 ">
                     <div className={"bg-gray-300 p-2 mb-0.5 text-center rounded"}>
