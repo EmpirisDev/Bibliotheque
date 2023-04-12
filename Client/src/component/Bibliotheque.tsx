@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 type Livre = {
     _id: string;
@@ -37,11 +37,15 @@ export const Bibliotheque = () => {
             .catch((error) => console.error(error));
     }, []);
 
-    const handleLivreLu = (id: string) => {
+    const handleLivreLu = async (id: string) => {
         const livre = records.find((livre) => livre._id === id);
-        const updatedLivre = {...livre, lu: !livre.lu};
-        setRecords(records.map((livre) => livre._id === id ? updatedLivre : livre));
-        updateLivre(id, updatedLivre.lu);
+        if (livre) {
+            await updateLivre(id, !livre.lu);
+            const updatedLivre = {...livre, lu: !livre.lu};
+            setRecords(records.map((livre) => livre._id === id ? updatedLivre : livre));
+
+        }
+
     };
 
 
@@ -66,11 +70,12 @@ export const Bibliotheque = () => {
                 </div>
                 <div className={" p-2 mb-0.5 text-center rounded"}>
                     <button
-                        className={`bg-${livre.lu ? "green" : "gray"}-500 text-white font-bold py-2 px-4 rounded`}
+                        className={`bg-${livre.lu ? "green-500 livre-lu" : "gray-300"} text-white font-bold py-2 px-4 rounded`}
                         onClick={() => handleLivreLu(livre._id)}
                     >
                         {livre.lu ? "Lu" : "Non lu"}
                     </button>
+
 
                 </div>
             </div>

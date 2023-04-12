@@ -27,6 +27,8 @@ export function ListeLivres() {
         setSelectedLivre(livre);
     };
 
+
+
     const handleModalClose = () => {
         setSelectedLivre(null);
     };
@@ -38,10 +40,14 @@ export function ListeLivres() {
                     "Content-Type": "application/json",
                 },
             })
+            .then(() => {
+                alert("Le livre a été ajouté à la bibliothèque !");
+            })
             .catch((error) => {
                 console.log(error);
             });
     };
+
     const listLivre = records.map((livre: Livre) => {
         return (
             <div
